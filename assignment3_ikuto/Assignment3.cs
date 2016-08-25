@@ -32,7 +32,7 @@ namespace assignment3_ikuto
 
             accountHolders = AccountHolder.findByAccountID(accountID);
 
-            if (accountHolders.Count() > 0)
+            if (accountHolders.Count() > 0 && password == accountHolders.First<AccountHolder>().password)
             {
                 MessageBox.Show("Login succeded!");
                 bankTabs.TabPages.Add(mainTab);
