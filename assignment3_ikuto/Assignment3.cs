@@ -71,6 +71,12 @@ namespace assignment3_ikuto
             string transactType = transactTypeCbx.Text;
             string childClassName = accountHolder.GetType().Name;
 
+            if (Convert.ToDouble(amountTbx.Text) < 0)
+            {
+                MessageBox.Show("Wrong number!");
+                return;
+            }
+
             if (childClassName == "Visa")
             {
                 Visa visaAccountHolder = accountHolder as Visa;
