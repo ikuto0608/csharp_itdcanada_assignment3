@@ -104,8 +104,6 @@ namespace assignment3_ikuto
             accountHolders = AccountHolder.findByAccountID((int)accountHolder.account_number);
             displayAccountHolsers(accountHolders);
             displayTransactions((int)accountHolder.id);
-
-            MessageBox.Show("Succeeded transaction!");
         }
 
         private void withdrawOrTranfer(AccountHolder accountHolder)
@@ -124,6 +122,8 @@ namespace assignment3_ikuto
 
             accountHolder.balance -= transcript.amount;
             accountHolder.save();
+
+            MessageBox.Show("Succeeded transaction!");
         }
 
         private void deposit(AccountHolder accountHolder)
